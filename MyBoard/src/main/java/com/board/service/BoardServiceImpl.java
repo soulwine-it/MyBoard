@@ -1,5 +1,7 @@
 package com.board.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
@@ -36,6 +38,12 @@ public class BoardServiceImpl implements BoardService {
 	public void delete(int bno) throws Exception {
 		dao.delete(bno);
 
+	}
+
+	@Override
+	public List<BoardVO> list() throws Exception {
+		
+		return dao.list();
 	}
 
 }

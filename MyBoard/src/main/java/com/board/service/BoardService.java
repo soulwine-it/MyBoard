@@ -1,5 +1,7 @@
 package com.board.service;
 
+import java.util.List;
+
 import com.board.domain.BoardVO;
 
 public interface BoardService {
@@ -11,4 +13,6 @@ public interface BoardService {
 	public void update(BoardVO vo) throws Exception;
 	
 	public void delete(int bno) throws Exception;
+	
+	public List<BoardVO> list() throws Exception;
 }	

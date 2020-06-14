@@ -1,5 +1,7 @@
 package com.board.persistence;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -40,6 +42,12 @@ public class BoardDAOImpl implements BoardDAO {
 	public void delete(int bno) throws Exception {
 		sql.delete(namespace + ".delete", bno);
 
+	}
+	//리스트
+	@Override
+	public List<BoardVO> list() throws Exception {
+		// TODO Auto-generated method stub
+		return sql.selectList(namespace + ".list");
 	}
 
 }
