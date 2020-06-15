@@ -16,15 +16,18 @@
 
 <div id="root">
 	<header>
-	<h1>게시판 조회</h1>
+		<%@ include file="include/header.jsp" %>
 	</header>
 <hr />
+	<nav>
+		<%@ include file="include/nav.jsp" %>
+	</nav>
 	<section id="container">
 		<form role="form" method="post" autocomplete="off">
 		
 			<label>글 번호</label>
 			<input type="text" id="bno" name="bno" value="${read.bno}" readonly="readonly" /> <br>
-		</form>
+		
 		
 			<label>글 제목</label>
 			<input type="text" id="title" name="title" value="${read.title}" readonly="readonly" /> <br>
@@ -39,7 +42,7 @@
 			<span><fmt:formatDate value="${read.regDate}" pattern="yyyy-MM-dd" /></span> <br>
 		
 			<button id="modify_btn">수정</button>
-			<button id="cancel_btn">취소</button>
+			<button id="delete_btn">삭제</button>
 		
 		<script>
 			var formObj = $("form[role='form']");
@@ -52,16 +55,18 @@
 			});
 			
 			//삭제 버튼 클릭
-			$("delete_btn").click(function(){
+			$("#delete_btn").click(function(){
 				formObj.attr("action", "/board/delete");
 				formObj.attr("method", "get");
 				formObj.submit();
 			});
 		</script>
-		
-		
+		</form>
 	</section>
-	
+	<footer>
+		<%@ include file="include/footer.jsp" %>
+	</footer>
 </div>
+
 </body>
 </html>

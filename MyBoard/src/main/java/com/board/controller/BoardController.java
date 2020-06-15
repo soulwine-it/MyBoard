@@ -64,15 +64,7 @@ public class BoardController {
 		
 		model.addAttribute("modify", vo);
 	}
-	// 글 삭제
-	 @RequestMapping(value = "/delete", method = RequestMethod.GET)
-	 public void getDelete(@RequestParam("bno") int bno, Model model) throws Exception {
-	  logger.info("get delete");
-	    
-	  model.addAttribute("delete", bno);
-	  
-	 }
-	 
+
 	// 글 수정  POST 
 	 @RequestMapping(value = "/modify", method = RequestMethod.POST)
 	 public String postModify(BoardVO vo) throws Exception {
@@ -83,12 +75,20 @@ public class BoardController {
 	  return "redirect:/board/list";
 	  
 	 }
-
+		// 글 삭제
+	 @RequestMapping(value = "/delete", method = RequestMethod.GET)
+	 public void getDelete(@RequestParam("bno") int bno, Model model) throws Exception {
+	  logger.info("get delete");
+	    
+	  model.addAttribute("delete", bno);
+	  
+	 }
+	 
 	 // 글 삭제  POST
 	 @RequestMapping(value = "/delete", method = RequestMethod.POST)
 	 public String postDelete(@RequestParam("bno") int bno) throws Exception {
 	  logger.info("post delete");
-	    
+	  
 	  service.delete(bno);
 	  
 	  return "redirect:/board/list";

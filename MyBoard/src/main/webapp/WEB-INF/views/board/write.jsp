@@ -11,14 +11,14 @@
 
 <div id="root">
 	<header>
-		<h1>게시판</h1>
+		<%@ include file="include/header.jsp" %>
 	</header>
 
 
 <hr>
 
 <nav>
-	처음 화면, 글쓰기, 로그인
+	<%@ include file="include/nav.jsp" %>
 </nav>
 
 <hr>
@@ -39,7 +39,7 @@
 </section>
 
 <footer>
-	<p>만든이 : soulwine</p>
+	<%@ include file="include/footer.jsp" %>
 </footer>
 </div>
 </body>

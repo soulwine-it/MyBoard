@@ -13,10 +13,12 @@
 <div id="root">
 
 	<header>
-		<h1>soulwine board</h1>
+	<%@ include file="include/header.jsp" %>
 	</header>
 <hr>
-	<nav> 처음화면 - 글쓰기 - 로그인 </nav>
+	<nav> 
+	<%@ include file="include/nav.jsp" %>
+	 </nav>
 <hr>
 	<section id="container">
 		<h2> 글 목 록 </h2>
@@ -38,7 +40,9 @@
 			<!-- 목록 끝  -->
 		</table>
 	</section>
-	
+	<footer>
+		<%@ include file="include/footer.jsp" %>
+	</footer>
 
 </div>
 </body>

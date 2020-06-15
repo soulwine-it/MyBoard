@@ -16,9 +16,12 @@
 
 	<div id="root">
 		<header>
-			<h1>게시판 조회</h1>
+			<%@ include file="include/header.jsp" %>
 		</header>
 		<hr />
+		<nav>
+			<%@ include file="include/nav.jsp" %>
+		</nav>
 		<section id="container">
 			<form role="form" method="post" autocomplete="off">
 
@@ -53,7 +56,9 @@
 			</form>
 
 		</section>
-
+	<footer>
+		<%@ include file="include/footer.jsp" %>
+	</footer>
 	</div>
 </body>
 </html>
