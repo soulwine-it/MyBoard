@@ -29,7 +29,7 @@
 <!-- 삭제 -->
 <delete id="delete">
 	delete from
-	myBoard
+		myBoard
 	where bno = #{bno}
 </delete>
 
