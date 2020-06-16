@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.domain.BoardVO;
+import com.board.domain.Criteria;
+import com.board.domain.PageMaker;
 import com.board.service.BoardService;
 
 @Controller
@@ -93,4 +95,21 @@ public class BoardController {
 	  
 	  return "redirect:/board/list";
 	 }
+	 
+	 //글 목록 + 페이지
+	 //model은 데이터만 전달하는 객체이고 , ModelAndView는 데이터와 뷰의 이름을 함께 전달하는 객체이다
+	 @RequestMapping(value="/listPage", method = RequestMethod.GET)
+	 public void listPage(Criteria cri, Model model) throws Exception{
+		 logger.info("get list page");
+		 
+		 List<BoardVO> list = service.listPage(cri);
+		 model.addAttribute("list", list);
+		 
+		 PageMaker pageMaker = new PageMaker();
+		 pageMaker.setCri(cri);
+		 pageMaker.setTotalCount(service.listCount());
+		 model.addAttribute("pageMaker", pageMaker);
+	 }
+	 
+	
 }
