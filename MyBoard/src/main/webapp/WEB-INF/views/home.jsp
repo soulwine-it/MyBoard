@@ -14,5 +14,6 @@
 <a href="/board/write">글 작성</a><br>
 <a href="/board/list">글 목록</a><br>
 <a href="/board/listPage">그 목록 + 페이지</a><br>
+<a href="/board/listSearch">글 목록 + 페이지 + 목록</a>
 </body>
 </html>
